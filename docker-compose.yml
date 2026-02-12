@@ -12,7 +12,7 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
   api:
-    image: eldoctormail/cmms-backend
+    image: eldoctormail/cmms-backend:12-02
     container_name: atlas-cmms-backend
     depends_on:
       - postgres
@@ -58,7 +58,7 @@ services:
     ports:
       - "8080:8080"
   frontend:
-    image: eldoctormail/cmms-frontend
+    image: eldoctormail/cmms-frontend:02-02-26
     container_name: atlas-cmms-frontend
     environment:
         API_URL: ${PUBLIC_API_URL}
